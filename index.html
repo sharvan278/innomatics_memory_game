@@ -1,68 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Memory Master</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="game-container">
-        <header>
-            <h1>Memory Master</h1>
-            <div class="game-stats">
-                <div class="timer">
-                    <span class="timer-icon">⏱</span>
-                    <span id="time-left">30</span>s
-                </div>
-                <div class="score">
-                    <span class="score-icon">🏆</span>
-                    <span id="score">0</span> pts
-                </div>
-                <button id="reset-btn" class="reset-button">
-                    🔄 Reset
-                </button>
-            </div>
-        </header>
-
-        <div id="mode-selector" class="mode-selector">
-            <h2>Select Game Mode</h2>
-            <div class="mode-grid">
-                <button class="mode-btn" data-mode="numbers">
-                    <span class="mode-icon">#</span>
-                    <h3>Numbers</h3>
-                    <p>Match pairs of numbers</p>
-                </button>
-                <button class="mode-btn" data-mode="fruits">
-                    <span class="mode-icon">🍎</span>
-                    <h3>Fruits</h3>
-                    <p>Match identical fruit images</p>
-                </button>
-                <button class="mode-btn" data-mode="syntax">
-                    <span class="mode-icon">&lt;/&gt;</span>
-                    <h3>Programming</h3>
-                    <p>Match programming syntax pairs</p>
-                </button>
-                <button class="mode-btn" data-mode="colors">
-                    <span class="mode-icon">🎨</span>
-                    <h3>Colors</h3>
-                    <p>Match identical color cards</p>
-                </button>
-            </div>
+      <header>
+        <h1>Memory Master</h1>
+        <div class="game-stats">
+          <div class="timer">
+            <span class="timer-icon">⏱</span>
+            <span id="time-left">30</span>s
+          </div>
+          <div class="score">
+            <span class="score-icon">🏆</span>
+            <span id="score">0</span> pts
+          </div>
+          <button id="reset-btn" class="reset-button" onclick="resetGame()">
+            🔄 Reset
+          </button>
         </div>
+      </header>
 
-        <div id="game-board" class="game-board hidden"></div>
-
-        <div id="game-over" class="game-over hidden">
-            <div class="game-over-content">
-                <h2 id="game-over-title">Game Over!</h2>
-                <p id="game-over-message">You scored 0 points</p>
-                <button id="play-again-btn" class="play-again-button">
-                    Play Again
-                </button>
-            </div>
+      <div id="mode-selector" class="mode-selector">
+        <h2>Select Game Mode</h2>
+        <div class="mode-grid">
+          <button class="mode-btn" onclick="startGame('numbers')">
+            <span class="mode-icon">#</span>
+            <h3>Numbers</h3>
+            <p>Match pairs of numbers</p>
+          </button>
+          <button class="mode-btn" onclick="startGame('fruits')">
+            <span class="mode-icon">🍎</span>
+            <h3>Fruits</h3>
+            <p>Match identical fruit images</p>
+          </button>
+          <button class="mode-btn" onclick="startGame('syntax')">
+            <span class="mode-icon">&lt;/&gt;</span>
+            <h3>Programming</h3>
+            <p>Match programming syntax pairs</p>
+          </button>
+          <button class="mode-btn" onclick="startGame('colors')">
+            <span class="mode-icon">🎨</span>
+            <h3>Colors</h3>
+            <p>Match identical color cards</p>
+          </button>
         </div>
+      </div>
+
+      <div id="game-board" class="game-board hidden"></div>
+
+      <div id="game-over" class="game-over hidden">
+        <div class="game-over-content">
+          <h2 id="game-over-title">Game Over!</h2>
+          <p id="game-over-message">You scored 0 points</p>
+          <button
+            id="play-again-btn"
+            class="play-again-button"
+            onclick="resetGame()"
+          >
+            Play Again
+          </button>
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
